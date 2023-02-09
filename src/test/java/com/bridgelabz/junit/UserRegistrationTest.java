@@ -120,7 +120,6 @@ public class UserRegistrationTest {
 		boolean result = userRegistration.password4("nadeem99");
 		Assert.assertEquals(false, result);
 	}
-
 	/*
 	 * Its should be all email samples provided
 	 */
