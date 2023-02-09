@@ -52,7 +52,7 @@ public class UserRegistrationTest {
 
 	@Test
 	public void givenPhoneNumber_WhenProper_shouldReturnTrue() {
-		boolean result = userRegistration.mobileNumber("91 7883426320");
+		boolean result = userRegistration.mobileNumber("91 8826923224");
 		Assert.assertEquals(true, result);
 	}
 
@@ -61,5 +61,19 @@ public class UserRegistrationTest {
 		boolean result = userRegistration.mobileNumber("5647891233");
 		Assert.assertEquals(false, result);
 	}
+	/*
+     * User need to follow Pre-defined password 
+     * Rule-1 ---> Minimun 8 characters
+     */
+	@Test
+    public void givenPassword_WhenProper_ShouldReturnTrue(){
+   	 boolean result = userRegistration.password("Qwertyuiop");
+   	 Assert.assertEquals(true, result);
+    }
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnFalse(){
+   	 boolean result = userRegistration.password("qwertyyuuiop");
+   	 Assert.assertEquals(false, result);
+}
 
 }
