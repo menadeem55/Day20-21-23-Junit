@@ -32,7 +32,6 @@ public class UserRegistrationTest {
 	public void givenLastName_WhenNotProper_ShouldReturnFalse() {
 		boolean result = userRegistration.lastName("akhtar");
 		Assert.assertEquals(false, result);
-
 	}
 
 	/*
@@ -119,6 +118,21 @@ public class UserRegistrationTest {
 	@Test
 	public void givenPasswordRule4_WhenNotProper_ShouldReturnFalse() {
 		boolean result = userRegistration.password4("nadeem99");
+		Assert.assertEquals(false, result);
+	}
+
+	/*
+	 * Its should be all email samples provided
+	 */
+	@Test
+	public void givenEmail8_WhenNotProper_ShouldReturnTrue() {
+		boolean result = userRegistration.emailIdValidator("abc.xyz@bl.co.in");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenEmail9_WhenNotProper_ShouldReturnFalse() {
+		boolean result = userRegistration.emailIdValidator("abc..2002@gmail.com");
 		Assert.assertEquals(false, result);
 	}
 
