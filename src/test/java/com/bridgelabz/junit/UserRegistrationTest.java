@@ -61,19 +61,35 @@ public class UserRegistrationTest {
 		boolean result = userRegistration.mobileNumber("5647891233");
 		Assert.assertEquals(false, result);
 	}
+
 	/*
-     * User need to follow Pre-defined password 
-     * Rule-1 ---> Minimun 8 characters
-     */
+	 * User need to follow Pre-defined password Rule-1 ---> Minimun 8 characters
+	 */
 	@Test
-    public void givenPassword_WhenProper_ShouldReturnTrue(){
-   	 boolean result = userRegistration.password("Qwertyuiop");
-   	 Assert.assertEquals(true, result);
-    }
-    @Test
-    public void givenPassword_WhenNotProper_ShouldReturnFalse(){
-   	 boolean result = userRegistration.password("qwertyyuuiop");
-   	 Assert.assertEquals(false, result);
-}
+	public void givenPassword_WhenProper_ShouldReturnTrue() {
+		boolean result = userRegistration.password("Qwertyuiop");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPassword_WhenNotProper_ShouldReturnFalse() {
+		boolean result = userRegistration.password("qwertyyuuiop");
+		Assert.assertEquals(false, result);
+	}
+
+	/*
+	 * Rule-2 ---> Should have at least 1 upper case
+	 */
+	@Test
+	public void givenPasswordRule2_WhenProper_ShouldReturnTrue() {
+		boolean result = userRegistration.password2("Qwertyu19");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPasswordRule2_WhenNotProper_ShouldReturnFalse() {
+		boolean result = userRegistration.password2("qwerrty");
+		Assert.assertEquals(false, result);
+	}
 
 }
