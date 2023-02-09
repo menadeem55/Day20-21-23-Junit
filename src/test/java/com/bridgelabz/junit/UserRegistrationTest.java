@@ -92,4 +92,19 @@ public class UserRegistrationTest {
 		Assert.assertEquals(false, result);
 	}
 
+	/*
+	 * Rule-3 ---> Should have at least 1 numeric number in the password
+	 */
+	@Test
+	public void givenPasswordRule3_WhenProper_ShouldReturnTrue() {
+		boolean result = userRegistration.password3("Nadeem@123");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPasswordRule3_WhenNotProper_ShouldReturnFalse() {
+		boolean result = userRegistration.password3("na@mh");
+		Assert.assertEquals(false, result);
+	}
+
 }
