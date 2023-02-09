@@ -5,79 +5,31 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-	@Test
-	public boolean firstName(String firstName) {
-		String regex = "^[A-Z]{1}[a-z]{2,}$";
-		// create a pattern
-		Pattern pattern = Pattern.compile(regex);
-		// get a matcher object
-		Matcher matcher = pattern.matcher(firstName);
-		return matcher.matches();
+	/*
+	 * uc-10 Junit Test to validate the user entry
+	 */
+	private static final String NAME = "^[A-Z]{1}[a-z]{2,}$";
+	private static final String EMAIL = "^(abc)[.][a-z]+[@](bl)[.](co)[.][a-z]+$";
+	private static final String PHONE_NUMBER = "^[\\d]{2}[\\s][\\d]{10}$";
+	private static final String PASSWORD = "^(?=.*[A-Z])(?=.*[a-z])(?=[^!@#$%^&+=]*[!@#$%^&+=][^!@#$%^&+=]*$)(?=.*[0-9]).{8,}$";
 
+	public boolean firstNameValidate(String fName) {
+		return Pattern.matches(NAME, fName);
 	}
 
-	@Test
-	public boolean lastName(String lastName) {
-		String regex = "^[A-Z]{1}[a-z]{2,}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(lastName);
-		return matcher.matches();
+	public boolean lastNameValidate(String lName) {
+		return Pattern.matches(NAME, lName);
 	}
 
-	@Test
-	public boolean email(String email) {
-		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(email);
-		return matcher.matches();
+	public boolean emailValidate(String email) {
+		return Pattern.matches(EMAIL, email);
 	}
 
-	@Test
-	public boolean mobileNumber(String number) {
-		String regex = "^[0-9]{1,3}[ ][6-9][0-9]{9}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(number);
-		return matcher.matches();
+	public boolean phoneNumberValidate(String phNum) {
+		return Pattern.matches(PHONE_NUMBER, phNum);
 	}
 
-	@Test
-	public boolean password(String password) {
-		String regex = "((?=.*[A-Z]).{8,})";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
-	}
-
-	@Test
-	public boolean password2(String password) {
-		String regex = "((?=.*[A-Z])(?=.*[0-9]).{8,})";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
-
-	}
-
-	@Test
-	public boolean password3(String password) {
-		String regex = "(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9]).{1,}";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
-	}
-
-	@Test
-	public boolean password4(String password) {
-		String regex = "((?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$-%^&*]).{8,})";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
-	}
-
-	@Test
-	public boolean emailIdValidator(String emailId) {
-		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(emailId);
-		return matcher.matches();
+	public boolean passwordValidate(String pw) {
+		return Pattern.matches(PASSWORD, pw);
 	}
 }
