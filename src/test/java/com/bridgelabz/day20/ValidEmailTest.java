@@ -4,26 +4,25 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
 import java.util.Arrays;
 import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 
-public class EmailTest {
+public class ValidEmailTest {
 	private String emailTest;
 	private boolean expectedResult;
-	private UserRegistration validateEmail;
+	private ValidEmail validEmail;
 
-	public EmailTest(String email, boolean expectedResult) {
+	public ValidEmailTest(String email, boolean expectedResult) {
 		this.emailTest = email;
 		this.expectedResult = expectedResult;
 	}
 
 	@Before
 	public void initialize() {
-		validateEmail = new UserRegistration();
+		validEmail = new ValidEmail();
 	}
 
 	@Parameterized.Parameters
@@ -40,7 +39,6 @@ public class EmailTest {
 
 	@Test
 	public void givenEmailAsVar_ShouldReturnTrueorFalse() {
-		assertEquals(expectedResult, validateEmail.validateEmail(emailTest));
+		assertEquals(expectedResult, validEmail.validateEmail(emailTest));
 	}
-
 }
