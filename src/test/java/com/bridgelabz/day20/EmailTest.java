@@ -11,12 +11,12 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 
-public class UserRegistrationTest {
+public class EmailTest {
 	private String emailTest;
 	private boolean expectedResult;
 	private UserRegistration validateEmail;
 
-	public UserRegistrationTest(String email, boolean expectedResult) {
+	public EmailTest(String email, boolean expectedResult) {
 		this.emailTest = email;
 		this.expectedResult = expectedResult;
 	}
@@ -42,4 +42,5 @@ public class UserRegistrationTest {
 	public void givenEmailAsVar_ShouldReturnTrueorFalse() {
 		assertEquals(expectedResult, validateEmail.validateEmail(emailTest));
 	}
+
 }
