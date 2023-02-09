@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class UserRegistrationTest {
 	UserRegistration userRegistration = new UserRegistration();
-
 	/*
 	 * User need to a valid first name
 	 */
