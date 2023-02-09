@@ -52,7 +52,7 @@ public class UserRegistrationTest {
 
 	@Test
 	public void givenPhoneNumber_WhenProper_shouldReturnTrue() {
-		boolean result = userRegistration.mobileNumber("91 7883426320");
+		boolean result = userRegistration.mobileNumber("91 8826923224");
 		Assert.assertEquals(true, result);
 	}
 
